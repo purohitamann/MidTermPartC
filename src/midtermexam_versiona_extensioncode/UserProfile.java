@@ -11,7 +11,7 @@ package midtermexam_versiona_extensioncode;
  * genres array. This code is to be used for SYST 17796 midterm exam.
  * Students are reminded to add themselves as modifiers when editing the
  * code.
- * @author dancye, 2019
+ * @author Aman Purohit , Feb'2023 (991669656)
  */
 public class UserProfile 
 {
@@ -19,6 +19,8 @@ public class UserProfile
     private String userID;//the userID
     private String genre;// the user's preferred genre of movie
     private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
+    
+    private String Name; // name of user
     
     /**
      * A constructor that takes in the userID and the favourite genre
@@ -31,12 +33,32 @@ public class UserProfile
         genre= givenGenre;
     }
 
+    public String[] getGenres() {
+        return genres;
+    }
+
+    public void setGenres(String[] genres) {
+        this.genres = genres;
+    }
+    
+    public UserProfile(){
+        
+    }
+
     /**
      * A getter for the userID
      * @return the userID
      */
     public String getUserID() {
         return userID;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     /**
@@ -51,14 +73,14 @@ public class UserProfile
      * @return the genre
      */
     public String getGenre() {
-        return genre;
+        return this.genre;
     }
 
     /**
      * @param genre the genre to set
      */
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenre(int genre) {
+        this.genre = this.genres[genre-1];
     }
     
     
